@@ -1,5 +1,12 @@
 import axios from 'axios';
-import type { TMDBResponse } from '../types/movie';
+import type { Movie } from '../types/movie';
+// import type { TMDBResponse } from '../types/movie';
+
+export interface TMDBResponse {
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
+}
 
 const API_KEY = import.meta.env.VITE_TMDB_TOKEN;
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
